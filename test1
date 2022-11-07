@@ -1,0 +1,84 @@
+from distutils.command import check
+from random import randint
+
+#this is a dictionary that holds four of my favorite artists
+musicArtists = {
+    'Rank 1:': 'Doja Cat',
+    'Rank 2:': 'Tyler, The Creator',
+    'Rank 3:': 'SZA',
+    'Rank 4:': 'Ski Mask The Slump God'
+}
+
+#this prints out the dictionary above
+print("My Favorite Artists: ")
+print("---------------------")
+for key, value in musicArtists.items():
+    print(key, value)
+
+#this is 
+musicArtists['rank5'] = 'Rihanna'
+musicArtists['rank6'] = 'Lil Nas X'
+
+print("\nLength of my Favorite Artists: ")
+print("------------------------------")
+print(len(musicArtists))
+
+print("\nDictionary Values: ")
+print("-------------------")
+print(musicArtists.values())
+
+def displaySong(): 
+    print("\nPlease enter one of my favorite artists: ")
+    global userArtist
+    userArtist = input()
+    if userArtist in musicArtists.values():
+        if userArtist == 'Doja Cat':
+            print("My favorite song by Doja Cat is 'I Don't Do Drugs'.")
+        if userArtist == 'Tyler, The Creator':
+            print("My favorite song by Tyler, the Creator is 'DEATHCAMP'.")
+        if userArtist == 'SZA':
+            print("My favorite song by SZA is 'Awkward'.")
+        if userArtist == 'Ski Mask The Slump God':
+            print("My favorite song by Ski Mask The Slump God is 'Take a Step Back'.")
+        if userArtist == 'Rihanna':
+            print("My favorite song by Rihanna is 'Woo'.")
+        if userArtist == 'Lil Nas X':
+            print("My favorite song by Lil NAs X is 'Dead Right Now'.")
+    else:
+        print("The artist you entered does not match one of my favorite artists, please try again.")
+
+displaySong()
+
+def checkArtist():
+    print("\nPlease enter your favorite artist: ")
+    global userFav
+    userFav = input()
+
+    if userFav in musicArtists.values():
+        print(f"We share a favorite artist! I like {userFav} too!")
+    else:
+        print("We do not share a favorite artist.")
+
+checkArtist()
+
+def bestArtist():
+    userList1 = []
+    global i 
+    print("\nPlease enter 4 of your favorite artists: ")
+    for i in range(0,4):
+        userList2 = input()
+        userList1.append(userList2)
+
+    global x
+    for x in range(1):
+        value = randint(1,4)
+    if value == 1:
+        print(userList1[0], "is one of the best artists you gave.")
+    if value == 2:
+        print(userList1[1], "is one of the best artists you gave.")
+    if value == 3:
+        print(userList1[2], "is one of the best artists you gave.")
+    if value == 4:
+        print(userList1[3], "is one of the best artists you gave.")
+
+bestArtist()
